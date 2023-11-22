@@ -1,45 +1,51 @@
 import React from 'react';
-import { Icons } from '../../Utils/Icons';
 import { StaticList, DescrStatistics } from './Statistics.styled';
 import { Notification } from '../Notification/Notification';
+import {
+  MdThumbUpOffAlt,
+  MdThumbDownOffAlt,
+  MdSentimentNeutral,
+  MdOutlineSummarize,
+  MdPercent,
+} from 'react-icons/md';
 
 export const Statistics = ({
   good,
   neutral,
   bad,
   total = 0,
-  positivePercentage = 0,
+  positivePercentage,
 }) => {
   return total ? (
     <StaticList>
       <li>
         <DescrStatistics>
-          <Icons.good size="14" />
-          Good: <span>{good}</span>
+          <MdThumbUpOffAlt size="14" />
+          Good: {good}
         </DescrStatistics>
       </li>
       <li>
         <DescrStatistics>
-          <Icons.neutral size="14" />
-          Neutral: <span>{neutral}</span>
+          <MdSentimentNeutral size="14" />
+          Neutral: {neutral}
         </DescrStatistics>
       </li>
       <li>
         <DescrStatistics>
-          <Icons.bad size="14" />
-          Bad: <span>{bad}</span>
+          <MdThumbDownOffAlt size="14" />
+          Bad: {bad}
         </DescrStatistics>
       </li>
       <li>
         <DescrStatistics>
-          <Icons.total size="14" />
-          Total: <span>{total}</span>
+          <MdOutlineSummarize size="14" />
+          Total: {total}
         </DescrStatistics>
       </li>
       <li>
         <DescrStatistics>
-          <Icons.positivePercentage size="14" />
-          Positive feedback: <span>{positivePercentage}%</span>
+          <MdPercent size="14" />
+          Positive feedback: {positivePercentage}%
         </DescrStatistics>
       </li>
     </StaticList>
